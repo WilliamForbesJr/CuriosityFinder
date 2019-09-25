@@ -14,10 +14,7 @@ request ({url, json: true}, (error, response, body) => {
     if (error) {
         console.log('error');
     } else {
-        console.log(body)
+        const img = body.photos[0].img_src
+        console.log(img)
     }
 })
-
-const parseData = (response) => {
-    JSON.parse(response)
-}
