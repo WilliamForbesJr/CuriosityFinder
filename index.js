@@ -30,15 +30,14 @@ app.get('/', (req, res) => {
     const url = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos' + frontHazQuery + key
 
 
-    request(url, (error, response, body) => {
+    request({url, json: true}, (error, response, body) => {
         if (error) {
         } else {
-            const data = JSON.parse(body)
             res.render('index', {
-                date: data.photos[0].earth_date,
-                img: data.photos[0].img_src,
-                sol: data.photos[0].sol,
-                status: data.photos[0].rover.status
+                date: body.photos[0].earth_date,
+                img: body.photos[0].img_src,
+                sol: body.photos[0].sol,
+                status: body.photos[0].rover.status
             })
         }
     })
