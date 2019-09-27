@@ -23,26 +23,25 @@ app.get('/', (req, res) => {
 
     const d = new Date()
     //Remember: getMonth is 0 index. GetDate-1 returns latest curiosity data
-    const yesterday = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate() - 1}`;
+    const yesterday = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate() - 2}`;
 
     const key = '&api_key=PWpg8az80VaMoqfYAtuIKrlAJv4YhHsBuVodHQFl'; //need to store key as heroku variable
     const frontHazQuery = `?earth_date=${yesterday}&camera=fhaz`;
     const url = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos' + frontHazQuery + key
 
 
-    res.send('asdf')
-    // request({ url, json: true }, (error, response, body) => {
-    //     if (error) {
-    //         console.error(error);
-    //     } else {
-    //         res.render('index', {
-    //             date: body.photos[0].earth_date,
-    //             img: body.photos[0].img_src,
-    //             sol: body.photos[0].sol,
-    //             status: body.photos[0].rover.status
-    //         })
-    //     }
-    // })
+    request(url, (error, response, body) => {
+        if (error) {
+        } else {
+            const data = JSON.parse(body)
+            res.render('index', {
+                date: data.photos[0].earth_date,
+                img: data.photos[0].img_src,
+                sol: data.photos[0].sol,
+                status: data.photos[0].rover.status
+            })
+        }
+    })
 })
 
 
