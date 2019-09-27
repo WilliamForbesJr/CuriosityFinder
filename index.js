@@ -21,10 +21,6 @@ const d = new Date()
 const yesterday = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()-1}`;
 
 
-
-
-
-
 app.get('/', (req, res) => {
 
     const key = '&api_key=PWpg8az80VaMoqfYAtuIKrlAJv4YhHsBuVodHQFl'; //need to store key as heroku variable
@@ -46,7 +42,7 @@ app.get('/', (req, res) => {
 })
 
 
-const port = process.env.PORT || 8000;
+let port = process.env.PORT;
 
 app.listen(port, () => {
     console.log('server started!')
