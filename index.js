@@ -29,23 +29,25 @@ app.get('/', (req, res) => {
     const frontHazQuery = `?earth_date=${yesterday}&camera=fhaz`;
     const url = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos' + frontHazQuery + key
 
-    request({ url, json: true }, (error, response, body) => {
-        if (error) {
-            console.error(error);
-        } else {
-            res.render('index', {
-                date: body.photos[0].earth_date,
-                img: body.photos[0].img_src,
-                sol: body.photos[0].sol,
-                status: body.photos[0].rover.status
-            })
-        }
-    })
+
+    res.send('asdf')
+    // request({ url, json: true }, (error, response, body) => {
+    //     if (error) {
+    //         console.error(error);
+    //     } else {
+    //         res.render('index', {
+    //             date: body.photos[0].earth_date,
+    //             img: body.photos[0].img_src,
+    //             sol: body.photos[0].sol,
+    //             status: body.photos[0].rover.status
+    //         })
+    //     }
+    // })
 })
 
 
 let port = process.env.PORT;
 
-app.listen(port, () => {
+app.listen(3000, () => {
     console.log('server started!')
 })
