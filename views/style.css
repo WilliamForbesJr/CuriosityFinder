@@ -1,0 +1,89 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: black;
+    font-family: 'Roboto', sans-serif;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1px;
+    text-transform: uppercase;
+    padding: 1rem;
+    padding-bottom: 0;
+    color: white;
+    border-width: 0;
+    border-left: 2px solid;
+    border-image: linear-gradient(to top, red, rgba(0,0,0,0)) 4 100%;
+
+}
+
+h2 {
+    margin-top: 5px;
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-left: 1rem;
+    animation:blinkingText 1.5s infinite;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-text-box {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    justify-content: space-around;
+    width: 25%;
+    height: 100vh;
+    padding-left: 2em;
+    animation: loadFade 6s;
+}
+
+.right-text-box {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    justify-content: space-around;
+    width: 25%;
+    height: 100vh;
+    padding-left: 2em;
+    animation: loadFade 6s;
+}
+
+.image-container {
+    align-self: center;
+    flex-grow: 2;
+    animation: loadFade 4s;
+
+}
+
+.center-img {
+    height: 90vh;
+    border: 1px solid black;
+    box-shadow:  1em 10px 10px rgba(0, 0, 0, 0.8),
+                -1em 10px 10px rgba(0, 0, 0, 0.8);
+    outline: 2px solid black;
+    outline-offset: -2px;
+}
+
+@keyframes blinkingText{
+	0%{		color: rgba(255,255,255,.7);	}
+	49%{	color: rgba(255,255,255,.5);	}
+	50%{	color: rgba(255,255,255,.6);	}
+	99%{	color:rgba(255,255,255,.7);	}
+	100%{	color: rgba(255,255,255,.7);	}
+}
+
+@keyframes loadFade {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+  }

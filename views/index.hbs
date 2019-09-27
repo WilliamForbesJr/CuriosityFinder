@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Where is Curiousity?</title>
+
+        <link rel="stylesheet" href="/views/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body>
+
+        <div class='background'></div>
+
+        <div class="container">
+            <div class="left-text-box">
+                <div>
+                    <h1>Rover:</h1>
+                    <h2>Curiosity</h2>
+                </div>
+
+                <div>
+                    <h1>Camera:</h1>
+                    <h2>Front Hazard Avoidance Camera</h2>
+                </div>
+
+                <div>
+                    <h1>Launch Date:</h1>
+                    <h2>2011-11-26</h2>
+                </div>
+                <div>
+                    <h1>Landing Date:</h1>
+                    <h2>2012-08-06</h2>
+                </div>
+            </div>
+
+            <div class="image-container">
+                <img class="center-img" src={{img}}>
+            </div>
+
+            <div class="right-text-box">
+
+                <div>
+                    <img id="nasalogo" src="/nasalogo.png" height="150px">
+                </div>
+
+                <div>
+                    <h1>Earth Date:</h1>
+                    <h2>{{date}}</h2>
+                </div>
+
+                <div>
+                    <h1>Current Sol:</h1>
+                    <h2>{{sol}}</h2>
+                </div>
+                
+                <div>
+                    <h1>Status:</h1>
+                    <h2>{{status}}</h2>
+                </div>
+            </div>
+
+        </div>
+
+    </body>
+
+
+<style>
+    .background {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-image:url({{img}});
+        background-size: stretch;
+        filter: blur(3px);
+        filter: opacity(30%);
+        z-index: -1;
+        animation: loadFade 2.5s;
+</style>
+
+</html>
