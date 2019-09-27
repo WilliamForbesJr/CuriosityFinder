@@ -16,12 +16,14 @@ app.use(express.static('public')) //static dir
 
 
 
-const d = new Date()
-//Remember: getMonth is 0 index. GetDate-1 returns latest curiosity data
-const yesterday = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()-1}`;
+
 
 
 app.get('/', (req, res) => {
+
+    const d = new Date()
+    //Remember: getMonth is 0 index. GetDate-1 returns latest curiosity data
+    const yesterday = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate() - 1}`;
 
     const key = '&api_key=PWpg8az80VaMoqfYAtuIKrlAJv4YhHsBuVodHQFl'; //need to store key as heroku variable
     const frontHazQuery = `?earth_date=${yesterday}&camera=fhaz`;
