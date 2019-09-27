@@ -5,15 +5,14 @@ const hbs       = require('hbs')
 const app       = express();
 
 //path setup
-const publicDirectoryPath = path.join(__dirname,)
-const viewsPath = path.join(__dirname, './views')
-console.log(publicDirectoryPath)
+// const publicDirectoryPath = path.join(__dirname,)
+// const viewsPath = path.join(__dirname, './views')
 
 //view engine setup for templating
 app.set('view engine', 'hbs')
-app.set('views', viewsPath)
+// app.set('views', viewsPath)
 
-app.use(express.static(publicDirectoryPath)) //static dir
+app.use(express.static('public')) //static dir
 
 
 
@@ -48,6 +47,6 @@ app.get('/', (req, res) => {
 
 
 
-app.listen(process.env.PORT, process.env.IP, () => {
+app.listen(3000, () => {
     console.log('server started!')
 })
