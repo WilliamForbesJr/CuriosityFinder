@@ -16,6 +16,7 @@ app.get('/', (req, res) => {
 
     request({url, json: true}, (error, response, body) => {
         if (error) {
+            res.send(error)
         } else {
             res.render('index', {
                 date: body.photos[0].earth_date,
@@ -23,6 +24,7 @@ app.get('/', (req, res) => {
                 sol: body.photos[0].sol,
                 status: body.photos[0].rover.status,
                 cam: body.photos[0].camera.full_name
+
             })
         }
     })
@@ -33,3 +35,5 @@ let port = process.env.PORT;
 app.listen(port || 3000, () => {
     console.log('server started!')
 })
+
+module.exports = app; //to test
