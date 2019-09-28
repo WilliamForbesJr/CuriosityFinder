@@ -15,8 +15,6 @@ app.set('view engine', 'hbs')
 
 app.use(express.static('public')) //static dir
 
-console.log(APIManager.buildURL(6))
-
 app.get('/', (req, res) => {
 
     const url = APIManager.buildURL(1)
@@ -37,6 +35,6 @@ app.get('/', (req, res) => {
 
 let port = process.env.PORT;
 
-app.listen(3000, () => {
+app.listen(port || 3000, () => {
     console.log('server started!')
 })
