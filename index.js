@@ -12,7 +12,7 @@ app.use(express.static('public')) //static dir
 
 app.get('/', (req, res) => {
 
-    const url = APIManager.buildURL(1)
+    const url = APIManager.buildURL()
 
     request({url, json: true}, (error, response, body) => {
         if (error) {
