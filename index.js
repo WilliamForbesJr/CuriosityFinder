@@ -1,18 +1,13 @@
-const path      = require('path')
-const request   = require('request');
-const express   = require('express');
-const hbs       = require('hbs')
-const APIManager = require('./utils/APIManager.js')
-
-const app       = express();
-//path setup
-// const publicDirectoryPath = path.join(__dirname,)
-// const viewsPath = path.join(__dirname, './views')
+// Modules
+const path          = require('path')
+const request       = require('request');
+const express       = require('express');
+const hbs           = require('hbs')
+const APIManager    = require('./utils/APIManager.js')
+const app           = express();
 
 //view engine setup for templating
 app.set('view engine', 'hbs')
-// app.set('views', viewsPath)
-
 app.use(express.static('public')) //static dir
 
 app.get('/', (req, res) => {

@@ -6,7 +6,7 @@ const APIManager = (function () {
             return `?earth_date=${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate() - 2}`
         },
 
-        key: '&api_key=PWpg8az80VaMoqfYAtuIKrlAJv4YhHsBuVodHQFl', //need to store key as heroku variable
+        key: process.env.APIKEY, //need to store key as heroku variable
 
         cams: [
             'fhaz',
