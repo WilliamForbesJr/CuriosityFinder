@@ -1,3 +1,4 @@
+
 const APIManager = (function () {
     return {
 
@@ -24,6 +25,5 @@ const APIManager = (function () {
         },
     }
 }());
-
 
 module.exports = APIManager;
