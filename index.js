@@ -21,7 +21,8 @@ app.get('/', (req, res) => {
                 date: body.photos[0].earth_date,
                 img: body.photos[0].img_src,
                 sol: body.photos[0].sol,
-                status: body.photos[0].rover.status
+                status: body.photos[0].rover.status,
+                cam: body.photos[0].camera.full_name
             })
         }
     })
