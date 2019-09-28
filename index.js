@@ -2,8 +2,9 @@ const path      = require('path')
 const request   = require('request');
 const express   = require('express');
 const hbs       = require('hbs')
-const app       = express();
+const APIManager = require('./utils/APIManager.js')
 
+const app       = express();
 //path setup
 // const publicDirectoryPath = path.join(__dirname,)
 // const viewsPath = path.join(__dirname, './views')
@@ -14,21 +15,11 @@ app.set('view engine', 'hbs')
 
 app.use(express.static('public')) //static dir
 
-
-
-
-
+console.log(APIManager.buildURL(6))
 
 app.get('/', (req, res) => {
 
-    const d = new Date()
-    //Remember: getMonth is 0 index. GetDate-1 returns latest curiosity data
-    const yesterday = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate() - 2}`;
-
-    const key = '&api_key=PWpg8az80VaMoqfYAtuIKrlAJv4YhHsBuVodHQFl'; //need to store key as heroku variable
-    const frontHazQuery = `?earth_date=${yesterday}&camera=fhaz`;
-    const url = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos' + frontHazQuery + key
-
+    const url = APIManager.buildURL(1)
 
     request({url, json: true}, (error, response, body) => {
         if (error) {
@@ -46,6 +37,6 @@ app.get('/', (req, res) => {
 
 let port = process.env.PORT;
 
-app.listen(port, () => {
+app.listen(3000, () => {
     console.log('server started!')
 })
