@@ -15,7 +15,7 @@ describe('API Manager', function () {
         expect(APIManager.buildURL()).to.include(undefined);
     });
 
-    it('should randomly roll a 0-1', function () {
-        expect(APIManager.loadRandomCam()).to.be.within(0,1)
+    it('should randomly roll a 0-2', function () {
+        expect(APIManager.loadRandomCam()).to.be.within(0,2)
     });
 })
