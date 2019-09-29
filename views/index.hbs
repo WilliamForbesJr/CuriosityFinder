@@ -9,7 +9,6 @@
     </head>
 
     <body>
-
         <div class='background'></div>
 
         <div class="container">
@@ -18,12 +17,10 @@
                     <h1>Rover:</h1>
                     <h2>Curiosity</h2>
                 </div>
-
                 <div>
                     <h1>Camera:</h1>
                     <h2>{{cam}}</h2>
                 </div>
-
                 <div>
                     <h1>Launch Date:</h1>
                     <h2>2011-11-26</h2>
@@ -39,32 +36,26 @@
             </div>
 
             <div class="right-text-box">
-
                 <div>
                     <img id="nasalogo" src="/images/nasalogo.png" height="150px">
                 </div>
-
                 <div>
                     <h1>Earth Date:</h1>
                     <h2>{{date}}</h2>
                 </div>
-
                 <div>
                     <h1>Current Sol:</h1>
                     <h2>{{sol}}</h2>
                 </div>
-                
                 <div>
                     <h1>Status:</h1>
                     <h2>{{status}}</h2>
                 </div>
             </div>
-
         </div>
-
     </body>
 
-
+{{!-- using inline style as hbs cannot template into CSS --}}
 <style>
     .background {
         position: absolute;
