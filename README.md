@@ -14,9 +14,9 @@ Include logo/demo screenshot etc.
 
 ## Tech used
 - Backend: 
- - NodeJS, Express
+  - Node, Express, Request
 - Frontend:
- -hbs for templating. Styled with plain CSS
+  - hbs for templating. Styled with plain CSS
 
 ## Installation
 - Local installation not necessary. However, if you would like to run locally, you will need your own API key stored as an environment variable.
@@ -25,7 +25,7 @@ Include logo/demo screenshot etc.
 - This app stores the API key as a local environment variable. So if you are cloning this app on a new server or use locally, you will need to get an API key.
   - API key can be found here: https://api.nasa.gov/
   - This app makes all requests to **Mars Rover Photos**
-  - *It is important to note that Curiousity's most recent update is 24 hours behind. I have set a buffer of 48 hours in the date to account for any edge cases in which there is a longer delay.*
+- *It is important to note that Curiousity's most recent update is 24 hours behind. I have set a buffer of 48 hours in the date to account for any edge cases in which there is a longer delay.*
 
 ## Tests
 - Basic unit tests included. These will require Mocha and Chai
