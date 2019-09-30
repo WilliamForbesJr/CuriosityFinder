@@ -16,7 +16,7 @@ const APIManager = (function () {
         }, //keeping range between 0-2 for now as API calls are still not consistent with all of NASA's cams.
 
         buildURL: function () {
-            return 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos' + this.getDate() + `&camera=${cams[this.loadRandomCam()]}` + key
+            return `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos${this.getDate()}&camera=${cams[this.loadRandomCam()]}${key}`
         },
     }
 }());
