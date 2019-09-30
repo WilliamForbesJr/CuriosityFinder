@@ -9,7 +9,7 @@
     </head>
 
     <body>
-        <div class='background'></div>
+        <div class='background' style="background-image:url({{img}});"></div>
 
         <div class="container">
             <div class="left-text-box">
@@ -56,17 +56,5 @@
     </body>
 
 {{!-- using inline style as hbs cannot template into CSS --}}
-<style>
-    .background {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        background-image:url({{img}});
-        background-size: stretch;
-        filter: blur(3px);
-        filter: opacity(30%);
-        z-index: -1;
-        animation: loadFade 2.5s;
-</style>
 
 </html>
