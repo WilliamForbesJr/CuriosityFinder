@@ -22,5 +22,3 @@ const APIManager = (function () {
 }());
 
 module.exports = APIManager;
-
-module.exports = APIManager;
