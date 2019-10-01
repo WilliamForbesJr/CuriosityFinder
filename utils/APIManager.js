@@ -1,7 +1,7 @@
 const APIManager = (function () {
     return {
 
-        key: process.env.APIKEY, //key stored as local var
+        key:'&api_key=PWpg8az80VaMoqfYAtuIKrlAJv4YhHsBuVodHQFl', //key stored as local var
 
         cams: ['fhaz', 'rhaz', 'chemcam', 'mast', 'mahli', 'mardi', 'navcam', 'pancam'],
         //need to check refresh rates for all cams other than fhaz and rhaz as they are not daily use idx 0 and 1 for now
