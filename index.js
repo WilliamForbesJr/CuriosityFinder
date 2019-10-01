@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
             res.send(error);
         } else {
 
-            const index = APIManager.loadRandomArrayIndex(body.photos); //creating constant for photos array based on length of array received
+            const index = APIManager.loadRandomArrayIndex(body.photos.length); //creating constant for photos array based on length of array received
 
             res.render('index', {
                 date: body.photos[index].earth_date,

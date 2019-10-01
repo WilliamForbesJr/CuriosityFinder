@@ -19,8 +19,8 @@ const APIManager = (function () {
             return 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos' + this.getDate() + `&camera=${this.cams[this.loadRandomCam()]}` + this.key;
         },
 
-        loadRandomArrayIndex: function(body) {
-            return Math.floor(Math.random() * body.length);
+        loadRandomArrayIndex: function(length) {
+            return Math.floor(Math.random() * length);
         },
     }
 }());
