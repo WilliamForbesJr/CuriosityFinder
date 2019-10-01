@@ -14,7 +14,7 @@ const APIManager = (function () {
         },
 
         loadRandomCam: function () {
-            return Math.floor(Math.random() * 3);
+            return Math.floor(Math.random() * 2);
         }, //keeping range between 0-2 for now as API calls are still not consistent with all of NASA's cams.
 
         buildURL: function () {
