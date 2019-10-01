@@ -19,6 +19,7 @@ app.get('/', (req, res) => {
         if (error) {
             res.send(error);
         } else {
+
             const index = APIManager.loadRandomArrayIndex(body.photos.length) //creating constant for photos array based on length of array received
 
             res.render('index', {

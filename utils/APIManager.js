@@ -1,3 +1,5 @@
+const moment = require('moment');
+
 const APIManager = (function () {
     return {
 
@@ -7,12 +9,12 @@ const APIManager = (function () {
         //need to check refresh rates for all cams other than fhaz and rhaz as they are not daily use idx 0 and 1 for now
 
         getDate: function () {
-            const d = new Date();
-            return `?earth_date=${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate() - 3}`;
+            const date = moment().subtract(3, 'days').format('YYYY-MM-DD')
+            return `?earth_date=${date}`;
         },
 
         loadRandomCam: function () {
-            return Math.floor(Math.random() * 4);
+            return Math.floor(Math.random() * 2);
         }, //keeping range between 0-2 for now as API calls are still not consistent with all of NASA's cams.
 
         buildURL: function () {
