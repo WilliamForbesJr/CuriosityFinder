@@ -20,6 +20,7 @@ I originally began this project to practice working with RESTful APIs. However N
 - Express
 - Request
 - hbs
+- MomentJS
 - Styled with plain CSS
 
 ## Installation
