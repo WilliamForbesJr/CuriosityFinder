@@ -18,17 +18,14 @@ app.get('/', (req, res) => {
             res.send(error);
         } else {
 
-            
+            // const index = APIManager.loadRandomArrayIndex(body.photos.length); //creating constant for photos array based on length of array received
 
-            res.render('index', function() {
-                const index = APIManager.loadRandomArrayIndex(body.photos.length); //creating constant for photos array based on length of array received
-                return {
-                    date: body.photos[index].earth_date,
-                    img: body.photos[index].img_src,
-                    sol: body.photos[index].sol,
-                    status: body.photos[index].rover.status,
-                    cam: body.photos[index].camera.full_name
-                }
+            res.render('index', {
+                date: body.photos[0].earth_date,
+                img: body.photos[0].img_src,
+                sol: body.photos[0].sol,
+                status: body.photos[0].rover.status,
+                cam: body.photos[0].camera.full_name
             });
         }
     });
