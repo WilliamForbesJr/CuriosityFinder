@@ -1,13 +1,14 @@
 // Modules
 const request       = require('request');
 const express       = require('express');
+const path          = require('path');
 const hbs           = require('hbs');
 const APIManager    = require('./utils/APIManager.js');
 const app           = express();
 
 //view engine setup for templating
 app.set('view engine', 'hbs');
-app.use(express.static('public')); //static dir
+app.use(express.static(path.join(__dirname, 'public'))); //static dir
 
 app.get('/', (req, res) => {
 
@@ -17,7 +18,6 @@ app.get('/', (req, res) => {
         if (error) {
             res.send(error);
         } else {
-            console.log(body)
             // const index = APIManager.loadRandomArrayIndex(body.photos.length); //creating constant for photos array based on length of array received
 
             res.render('index', {
