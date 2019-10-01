@@ -8,10 +8,11 @@ I originally began this project to practice working with RESTful APIs. However N
 
 ## Features
 - This app uses NASA's API to pull the latest images from the Curiosity Rover. 
-- On each page load, it will randomly load one of the 3 most recent images from Curiosity's Hazard Cameras or Chemical Camera.
+- On each page load, it will randomly load an image from Curiosity's Front or Rear Hazard cams.
+- Additionally, the app will load one of hundreds of different images sent that day by Curiosity, with accurate stats!
 
 ## Screenshots
-Include logo/demo screenshot etc.
+![UI Image](https://i.imgur.com/7rOqs16l.png "UI Image")
 
 ## Tech used
 #### Built Using:
